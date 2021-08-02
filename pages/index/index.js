@@ -1,7 +1,7 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
+const recorderManager = wx.getRecorderManager();
 Page({
   data: {
     motto: 'Hello World',
@@ -12,6 +12,7 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
   bindtest:function () {
+
       wx.request({
         url: 'http://47.97.152.69:8080/webtest1/TestServlet',
         data: {account:'abc',
@@ -65,5 +66,81 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  tip: function (msg) {
+    wx.showModal({
+        title: '提示',
+        content: msg,
+        showCancel: false
+    })
+  },
+
+  startRecordMp3: function () {
+    recorderManager.start({
+        format: 'mp3'
+    });
+}
+
+/**
+ * 停止录音
+ */
+, stopRecord: function () {
+    recorderManager.stop()
+}
+
+/**
+ * 播放录音
+ */
+, playRecord: function () {
+    var that = this;
+    var src = this.data.src;
+    if (src == '') {
+        this.tip("请先录音！")
+        return;
+    }
+    this.innerAudioContext.src = this.data.src;
+    this.innerAudioContext.play()
+},
+sendRecord: function () {
+  var that = this;
+  wx.uploadFile({
+    url: '',
+    filePath: that.data.src,
+    formData: {
+      method: 'POST'
+    },
+    name: 'file',
+    success: function(result) {
+        that.setData({
+            voiceInfo: "上传成功"
+        });
+        var data = JSON.parse(result.data);
+        that.setData({
+            voiceInfo: "请求结果：" + result.data
+        });
+    }
+});
+},
+
+onLoad: function (options) {
+    var that = this;
+    recorderManager.onError(function () {
+        that.tip("录音失败！")
+    });
+    recorderManager.onStop(function (res) {
+        that.setData({
+            src: res.tempFilePath
+        })
+        console.log(res.tempFilePath)
+        that.tip("录音完成！")
+    });
+
+    this.innerAudioContext = wx.createInnerAudioContext();
+    this.innerAudioContext.onError((res) => {
+        that.tip("播放录音失败！")
+    })
+
+},
+
+
 })

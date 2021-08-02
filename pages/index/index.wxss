@@ -26,3 +26,6 @@ swiper {
 image {
   width: 100%;
 }
+view{
+  padding: 15px;
+}
