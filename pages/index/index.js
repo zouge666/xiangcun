@@ -104,20 +104,14 @@ Page({
 sendRecord: function () {
   var that = this;
   wx.uploadFile({
-    url: '',
+    url: 'http://47.97.152.69:8080/voice/aip',
     filePath: that.data.src,
     formData: {
       method: 'POST'
     },
     name: 'file',
-    success: function(result) {
-        that.setData({
-            voiceInfo: "上传成功"
-        });
-        var data = JSON.parse(result.data);
-        that.setData({
-            voiceInfo: "请求结果：" + result.data
-        });
+    success: function(res) {
+      console.log(res.data)
     }
 });
 },

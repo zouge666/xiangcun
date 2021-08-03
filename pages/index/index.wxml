@@ -31,7 +31,7 @@
   <button bindtap='playRecord' type='primary'>播放录音</button>
 </view>
 <view>
-  <button bindtap='sendRecord' type='primary'>播放录音</button>
+  <button bindtap='sendRecord' type='primary'>发送录音并返回识别结果</button>
 </view>
 
 
