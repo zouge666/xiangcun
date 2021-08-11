@@ -1,39 +1,51 @@
 <!--index.wxml-->
-<swiper autoplay interval="1000" circular indicator-dots indicator-color="#0094ff" indicator-active-color="#ff0094">
-    <swiper-item> <image mode="widthFix" src="//gw.alicdn.com/imgextra/i1/44/O1CN013zKZP11CCByG5bAeF_!!44-0-lubanu.jpg" /> </swiper-item>
-    <swiper-item> <image mode="widthFix" src="//aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg" /> </swiper-item>
-    <swiper-item> <image mode="widthFix" src="//gw.alicdn.com/imgextra/i2/37/O1CN01syHZxs1C8zCFJj97b_!!37-0-lubanu.jpg" /> </swiper-item>
-</swiper>
+<!-- <swiper autoplay interval="5000" circular indicator-dots indicator-color="#0094ff" indicator-active-color="#ff0094">
+    <swiper-item> <image mode="widthFix" src="http://5b0988e595225.cdn.sohucs.com/images/20200409/5b7c7bb2a7ae493d8396be2cf1a6f074.jpeg" /> </swiper-item>
+    <swiper-item> <image mode="widthFix" src="http://5b0988e595225.cdn.sohucs.com/images/20200409/ff85b7d47cb44ca285639817d9dacc38.jpeg" /> </swiper-item>
+    <swiper-item> <image mode="widthFix" src="http://5b0988e595225.cdn.sohucs.com/images/20200409/32a8650bf4a94ccf8072f3315ab028d3.jpeg" /> </swiper-item>
+</swiper> -->
 
-<view>
- <button bindtap="bindtest">test</button>
-</view>
+<image class="top-bar" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F140729%2F330676-140h9163i327.jpg&refer=http%3A%2F%2Fimg.juimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631087452&t=eb1f06082ad316c2dccd5de0b76ae931">
 
+</image>
 
-<van-grid>
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
+<van-notice-bar
+  left-icon="volume-o"
+  text="村口集合，自带水泥"
+  
+/>
+
+<text class="top-comment" >晴</text>
+
+<van-grid border="{{false}}">
+  <van-grid-item icon="setting-o" text="xx" />
+  <van-grid-item icon="friends-o" text="xx" />
+  <van-grid-item icon="shop-o" text="xx" />
+  <van-grid-item icon="records" text="发布"  url="../notice/notice"/>
+  <van-grid-item icon="edit" text="xx" />
+  <van-grid-item icon="points" text="xx" />
+  <van-grid-item icon="coupon-o" text="xx" />
+  <van-grid-item icon="comment-o" text="xx" />
 </van-grid>
 
-<view>
-  <button bindtap='startRecordMp3' type='primary'>录音开始（mp3）</button>
-</view>
-<view>
-  <button bindtap='stopRecord' type='primary'>录音结束</button>
-</view>
-<view>
-  <button bindtap='playRecord' type='primary'>播放录音</button>
-</view>
-<view>
-  <button bindtap='sendRecord' type='primary'>发送录音并返回识别结果</button>
-</view>
+<van-divider contentPosition="left">文本</van-divider>
 
+<view class="vbnm">
+<view class='moki'>
+  <button  bindtap='startRecordMp3' type='primary'>
+  <text>   录音开始（mp3）</text>
+  </button>
+</view>
+<view class='moki'>
+  <button bindtap='stopRecord' type='primary'><text>录音结束</text></button>
+</view>
+<view class='moki'>
+  <button bindtap='playRecord' type='primary'><text>播放录音</text></button>
+</view>
+<view class="moki">
+  <button bindtap='sendRecord' type='primary'><text>返回识别结果</text></button>
+</view>
+</view>
 
 
 
@@ -58,4 +70,9 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+</view>
+
+
+<view>
+ <button bindtap="bindtest">后台test</button>
 </view>

@@ -21,11 +21,55 @@
 swiper {
   width: 100%;
   /* height: calc(100vw * 352 /  1125); */
-  height: 31.28vw;
+  height: 55.28vw;
+
+  border-radius: 10rpx;
 }
-image {
+/* image {
   width: 100%;
+} */
+
+.vbnm{
+  background-color: bisque;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  height: auto;
+  padding: 10rpx;
 }
-view{
-  padding: 15px;
+
+.moki{
+   background-color: aqua;
+  height: 80rpx;
+  width: 300rpx;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.moki text{
+  vertical-align:middle;
+  font-size: small;
+  display: table-cell;
+  text-align: center;
+}
+
+.top-bar {
+   border-radius: 0% 0% 10% 10%;
+   width:100%;
+}
+
+.inner {
+  bottom: 0;
+}
+
+.top-comment{
+position:absolute;
+top:100rpx;
+right:100rpx;
+font-size: xx-large;
+color:white;
 }

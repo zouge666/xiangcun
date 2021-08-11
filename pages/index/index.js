@@ -104,7 +104,7 @@ Page({
 sendRecord: function () {
   var that = this;
   wx.uploadFile({
-    url: 'http://47.97.152.69:8080/voice/aip',
+    url: 'http://47.97.152.69:8080/voice/aipAndLexer',
     filePath: that.data.src,
     formData: {
       method: 'POST'

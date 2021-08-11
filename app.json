@@ -2,10 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/my/my",
-    "pages/search/search",
     "pages/map/map", 
     "pages/logs/logs",
-    "pages/demo/demo"
+    "pages/demo/demo", 
+    "pages/notice/notice"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -29,7 +29,8 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-grid": "@vant/weapp/grid/index",
-  "van-grid-item": "@vant/weapp/grid-item/index"
+  "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-icon":"@vant/weapp/icon/index"
   },
   "sitemapLocation": "sitemap.json"
 }
